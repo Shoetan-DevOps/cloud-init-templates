@@ -34,6 +34,7 @@ fi
 
 virt-customize -a jammy-server-cloudimg-amd64.img --install qemu-guest-agent
 virt-customize -a jammy-server-cloudimg-amd64.img --run-command "useradd -m -s /bin/bash ansible"
+virt-customize -a jammy-server-cloudimg-amd64.img --run-command "echo 'ansible ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/ansible"
 virt-customize -a jammy-server-cloudimg-amd64.img --root-password password:$1
 virt-customize -a jammy-server-cloudimg-amd64.img --ssh-inject ansible:file:/root/ansible_ssh_key.txt
 qm create 9000 --name "CT-ubuntu-jammy" --memory 2048 --net0 virtio,bridge=vmbr0 --scsihw virtio-scsi-pci
