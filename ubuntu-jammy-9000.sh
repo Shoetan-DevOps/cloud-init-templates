@@ -7,6 +7,11 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+if [ -z "$1" ]
+  then echo "Please provide root Password for image as param"
+  exit
+fi
+
 # update packages
 sudo apt update -y
 
