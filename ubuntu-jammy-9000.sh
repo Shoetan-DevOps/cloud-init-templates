@@ -37,7 +37,7 @@ virt-customize -a jammy-server-cloudimg-amd64.img --run-command "useradd -m -s /
 virt-customize -a jammy-server-cloudimg-amd64.img --run-command "echo 'ansible ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/ansible"
 virt-customize -a jammy-server-cloudimg-amd64.img --root-password password:$1
 virt-customize -a jammy-server-cloudimg-amd64.img --ssh-inject ansible:file:/root/ansible_ssh_key.txt
-qm create 9000 --name "CT-ubuntu-jammy" --memory 2048 --net0 virtio,bridge=vmbr0 --scsihw virtio-scsi-pci
+qm create 9000 --name "CIT-ubuntu-jammy" --memory 2048 --net0 virtio,bridge=vmbr0 --scsihw virtio-scsi-pci
 qm set 9000 --scsi0 local-lvm:0,import-from=/root/jammy-server-cloudimg-amd64.img
 qm set 9000 --ide2 local-lvm:cloudinit
 qm set 9000 --boot order=scsi0
