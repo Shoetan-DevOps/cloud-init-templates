@@ -59,4 +59,4 @@ qm set 9000 --ide2 local-lvm:cloudinit  # create cd drive called cloudinit
 qm set 9000 --boot order=scsi0  # boot from sci0
 qm set 9000 --serial0 socket --vga serial0   
 qm set 9000 -agent 1
-# qm template 9000
+qm template 9000
