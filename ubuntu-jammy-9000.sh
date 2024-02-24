@@ -46,7 +46,7 @@ qm create 9000 --name "CIT-ubuntu-jammy" --memory 2048 --net0 virtio,bridge=vmbr
 qm set 9000 --scsi0 local-lvm:0,import-from=/root/jammy-server-cloudimg-amd64.img
 qm set 9000 --ide2 local-lvm:cloudinit
 qm set 9000 --boot order=scsi0
-#qm set 9000 --serial0 socket --vga serial0
+#qm set 9000 --serial0 socket --vga serial0   #set
 qm set 9000 -agent 1
 qm template 9000
 
