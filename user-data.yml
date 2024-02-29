@@ -1,8 +1,0 @@
-#cloud-config
-users:
-  - name: admin
-    password: admin_hash.txt
-  - name: ansible
-    password: ansible_hash.txt
-    ssh_authorized_keys:
-      - ssh-rsa ansible_ssh_key.txt
